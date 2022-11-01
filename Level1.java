@@ -16,6 +16,12 @@ public class Level1 extends Stages
     public Level1()
     {
         Player player1 = new Player();
-        addObject(player1, 534, 300);
+        Player player2 = new Player();
+        
+        addObject(player1, 200, 300);
+        player1.setup("w", "a", "d", "s");
+        addObject(player2, 800, 300);
+        player2.setup("up", "left", "right", "down");
+    
     }
 }
