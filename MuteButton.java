@@ -11,6 +11,7 @@ public class MuteButton extends Botao
     private GreenfootImage unMuted;
     private GreenfootImage muted;
     private boolean verificaMusica = false;
+    private String keyBind = "m";
     //Construtor do botão de mute
     public MuteButton()
     {
@@ -22,18 +23,21 @@ public class MuteButton extends Botao
     }
     public void clicked()
     {
-        super.clicked();
-        if(verificaMusica==false)
-        {
-            getWorldOfType(MenuInicial.class).somFundo().pause();
-            verificaMusica = true;
-            setImage(muted);
-        }
-        else
-        {
-            getWorldOfType(MenuInicial.class).somFundo().playLoop();     
-            verificaMusica = false;
-            setImage(unMuted);
-        }
+            mute();
+    }
+    public void mute()
+    {       
+            if(verificaMusica==false)
+            {
+                getWorldOfType(MenuInicial.class).somFundo().pause();
+                verificaMusica = true;
+                setImage(muted);
+            }
+            else
+            {
+                getWorldOfType(MenuInicial.class).somFundo().playLoop();     
+                verificaMusica = false;
+                setImage(unMuted);
+            }
     }
 }

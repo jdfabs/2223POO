@@ -11,7 +11,7 @@ public class Player extends DynamicObject
     
     public String  up = "w", down = "s", left = "a", right = "d" ;
     int velocidadeHorizontal = 0;
-    
+    int merda;
     int velocidadeMax = 10;
     int forcaSalto = 25;    
     
