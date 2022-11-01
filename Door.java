@@ -14,6 +14,7 @@ public class Door extends Wall
      */
     public boolean isOpen = false;
     public boolean wasOpen = false;
+    public int diferencaAberto = 100;
     public Door(){
         getImage().scale(50,100);
     }
@@ -23,11 +24,11 @@ public class Door extends Wall
     }
     public void open(){
         if(isOpen){
-            setLocation(getX(),getY()+100);
+            setLocation(getX(),getY()+diferencaAberto);
             isOpen=false;
         }
         else if (!isOpen){
-            setLocation(getX(),getY()-100);
+            setLocation(getX(),getY()-diferencaAberto);
             isOpen=true;
         }
     }

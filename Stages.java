@@ -51,7 +51,25 @@ public class Stages extends World
         showText("Time left: " + time, 150,150);
         time = time - ((System.currentTimeMillis() - initTime) / 1000);
     }
-
+    public void addFloor(int x, int y, int scaleX, int scaleY){
+        Floor objecto = new Floor();
+        addObject(objecto,x, y);
+        objecto.getImage().scale(scaleX,scaleY);        
+    }
+    public void addWall(int x, int y, int scaleX, int scaleY){
+        float scaleYFloat = scaleY;
+        float floatY = y;
+        int floorY = Math.round(y-60*scaleYFloat/100);
+        System.out.println(floorY);
+        
+        Floor floor = new Floor();
+        addObject(floor,x,floorY+30);
+        floor.getImage().scale(scaleX-5,50);
+        
+        Wall objecto = new Wall();
+        addObject(objecto,x, y);
+        objecto.getImage().scale(scaleX,scaleY);        
+    }
     
     
 }

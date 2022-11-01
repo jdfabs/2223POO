@@ -13,7 +13,7 @@ public class Player extends DynamicObject
     
     int velocidadeHorizontal = 0;
     int velocidadeMax = 8;
-    int forcaSalto = 25;    
+    int forcaSalto = 20;    
     public void act()
     {        
         super.act();
