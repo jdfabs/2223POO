@@ -9,10 +9,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Player extends DynamicObject
 {
     public String  up = "w", down = "s", left = "a", right = "d" ;
+    int saltoTimer = 0;
     
     int velocidadeHorizontal = 0;
-    int merda;
-    int velocidadeMax = 10;
+    int velocidadeMax = 8;
     int forcaSalto = 25;    
     public void act()
     {        
@@ -47,14 +47,15 @@ public class Player extends DynamicObject
             setLocation(getOneIntersectingObject(Wall.class).getX()-50,getY());
             velocidadeHorizontal = 0;
         }
+    
         
-        
-        if(Greenfoot.isKeyDown(up)){
-            if(onGround()){
+        if(Greenfoot.isKeyDown(up) && onGround() && velocidadeVertical >= 0  && saltoTimer == 0){
             velocidadeVertical -= forcaSalto;
-            }
+            saltoTimer = 10;
         }
-        
+        if(saltoTimer > 0 && onGround()) {
+            saltoTimer--;
+        }
     }
 
     public void atrito(){
