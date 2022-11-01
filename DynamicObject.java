@@ -27,12 +27,28 @@ public class DynamicObject extends Actor
             setLocation(getX(), getY() + velocidadeVertical);
             
         }
+        else if(onGround()){
+            setLocation(getX(),getOneIntersectingObject(Floor.class).getY()-50);
+        }
     }
     public boolean onGround(){
-        if(getY()>800){
+        Actor a = getOneIntersectingObject(Floor.class);
+        if(a != null && a.getY()>getY()){
             return true;
         }
         else return false;
+    }
+    public int isTouchingWall(){
+        Actor a = getOneIntersectingObject(Wall.class);
+        //á direita
+        if(a != null && a.getX()>getX()){
+            return 1;
+        }
+        //á esquerda
+        if(a != null && a.getX()<getX()){
+            return 2;
+        }
+        return 0;
     }
     public int updateVerticalSpeed(boolean onGround){
         if (onGround){
@@ -43,4 +59,5 @@ public class DynamicObject extends Actor
         }
         
     }
+
 }
