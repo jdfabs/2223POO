@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class InfoButton extends Actor
+public class InfoButton extends Botao
 {
     private GreenfootImage info;
     //Construtor do botão de info
@@ -16,19 +16,10 @@ public class InfoButton extends Actor
         info.scale(100,100);
         setImage(info);
     }
-    /**
-     * Act - do whatever the infoButton wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    public void act()
+
+    public void clicked()
     {
-        help();
-    }
-    public void help()
-    {
-        if(Greenfoot.mouseClicked(this))
-    {
-            Greenfoot.setWorld(new MenuInfo());
-        }
+        super.clicked();
+        Greenfoot.setWorld(new MenuInfo());
     }
 }

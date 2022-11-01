@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class MuteButton extends Actor
+public class MuteButton extends Botao
 {
     private GreenfootImage unMuted;
     private GreenfootImage muted;
@@ -20,30 +20,20 @@ public class MuteButton extends Actor
         muted.scale(100,100);
         setImage(unMuted);
     }
-    /**
-     * Act - do whatever the mute wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    public void act()
+    public void clicked()
     {
-        mute();
-    }
-    public void mute()
-    {
-        if(Greenfoot.mouseClicked(this))
+        super.clicked();
+        if(verificaMusica==false)
         {
-            if(verificaMusica==false)
-            {
-                getWorldOfType(MenuInicial.class).somFundo().pause();
-                verificaMusica = true;
-                setImage(muted);
-            }
-            else
-            {
-                getWorldOfType(MenuInicial.class).somFundo().playLoop();     
-                verificaMusica = false;
-                setImage(unMuted);
-            }
+            getWorldOfType(MenuInicial.class).somFundo().pause();
+            verificaMusica = true;
+            setImage(muted);
+        }
+        else
+        {
+            getWorldOfType(MenuInicial.class).somFundo().playLoop();     
+            verificaMusica = false;
+            setImage(unMuted);
         }
     }
 }

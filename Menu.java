@@ -1,21 +1,22 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
+import java.awt.Dimension;
+import java.awt.Toolkit;
 /**
- * Write a description of class MundoJogo here.
+ * Write a description of class Menu here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class MundoJogo extends World
+public class Menu extends World
 {
-
+    
     /**
-     * Constructor for objects of class MundoJogo.
+     * Constructor for objects of class Menu.
      * 
      */
-    public MundoJogo()
+    public Menu()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(600, 400, 1); 
+        super(1000, 900, 1); 
     }
 }

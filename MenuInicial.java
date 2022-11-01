@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class MenuInicial extends World
+public class MenuInicial extends Menu
 {
     private GreenfootImage menuInicial;
     private GreenfootSound som;
@@ -17,7 +17,7 @@ public class MenuInicial extends World
     public MenuInicial()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(1000, 900, 1);
+        //super(1000, 900, 1);
         
         menuInicial = new GreenfootImage("MenuInicial.jpeg");
         menuInicial.scale(1000,1000);
@@ -33,7 +33,7 @@ public class MenuInicial extends World
         addObject(mute, getWidth()-950, 50);
         
         som = new GreenfootSound("Som.mp3");
-        som.playLoop();
+        //som.playLoop();
         
     }
     public GreenfootSound somFundo()

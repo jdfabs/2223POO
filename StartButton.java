@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class StartButton extends Actor
+public class StartButton extends Botao
 {
     private GreenfootImage start;
     //Construtor do botão de start  
@@ -16,21 +16,9 @@ public class StartButton extends Actor
         start.scale(100,100);
         setImage(start);
     }
-    
-    
-    /**
-     * Act - do whatever the startButton wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    public void act()
+    public void clicked()
     {
-        start();
-    }
-    public void start()
-    {
-        if(Greenfoot.mouseClicked(this))
-        {
-            //
-        }
+        super.clicked(); 
+        Greenfoot.setWorld(new Level1());
     }
 }

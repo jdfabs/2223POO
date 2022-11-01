@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class MenuInfo extends World
+public class MenuInfo extends Menu
 {
     private GreenfootImage fundo;
     /**
@@ -14,10 +14,7 @@ public class MenuInfo extends World
      * 
      */
     public MenuInfo()
-    {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(1000, 900, 1); 
-        
+    {                    
         fundo = new GreenfootImage("MenuInfo.jfif");
         fundo.scale(1000,1000);
         setBackground(fundo);
@@ -27,6 +24,8 @@ public class MenuInfo extends World
         
         ReturnButton volta = new ReturnButton();
         addObject(volta, getWidth()-50,getHeight()-50);
+        
+        
         
         
         
