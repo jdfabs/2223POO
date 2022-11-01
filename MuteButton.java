@@ -11,7 +11,7 @@ public class MuteButton extends Botao
     private GreenfootImage unMuted;
     private GreenfootImage muted;
     private boolean verificaMusica = false;
-    private String keyBind = "m";
+
     //Construtor do botão de mute
     public MuteButton()
     {
@@ -20,6 +20,7 @@ public class MuteButton extends Botao
         unMuted.scale(100,100);
         muted.scale(100,100);
         setImage(unMuted);
+        keyBind = "m";
     }
     public void clicked()
     {

@@ -27,6 +27,10 @@ public class Level1 extends Stages
         addObject(wallRight,1000, getHeight()/2);
         wallRight.getImage().scale(50,1000);
         
+        Actor plataforma = new Floor();
+        addObject(plataforma,getWidth()/2, 600);
+        plataforma.getImage().scale(200,50);
+        
         
         Player player1 = new Player();
         Player player2 = new Player();

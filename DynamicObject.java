@@ -27,7 +27,7 @@ public class DynamicObject extends Actor
             setLocation(getX(), getY() + velocidadeVertical);
             
         }
-        else if(onGround()){
+        else if(onGround()&&!isTouchingCelling()){
             setLocation(getX(),getOneIntersectingObject(Floor.class).getY()-50);
         }
     }
@@ -50,8 +50,15 @@ public class DynamicObject extends Actor
         }
         return 0;
     }
+    public boolean isTouchingCelling(){
+        Actor a = getOneIntersectingObject(Wall.class);
+        if(a != null && a.getY()<getY()){
+            return true;
+        }
+        return false;
+    }
     public int updateVerticalSpeed(boolean onGround){
-        if (onGround){
+        if (onGround() || isTouchingCelling()){
             return 0;
         }
         else{

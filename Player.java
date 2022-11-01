@@ -41,9 +41,11 @@ public class Player extends DynamicObject
         }
         if(velocidadeHorizontal < 0 && isTouchingWall() == 2 ){
             setLocation(getOneIntersectingObject(Wall.class).getX()+50,getY());
+            velocidadeHorizontal = 0;
         }
         if(velocidadeHorizontal > 0 && isTouchingWall() == 1 ){
             setLocation(getOneIntersectingObject(Wall.class).getX()-50,getY());
+            velocidadeHorizontal = 0;
         }
         
         

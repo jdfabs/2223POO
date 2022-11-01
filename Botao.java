@@ -8,7 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Botao extends Actor
 {   
-    public String keyBind;
+    public String keyBind = null;    
+    public int keyBindTimer = 0;
     /**
      * Act - do whatever the Botao wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -16,7 +17,10 @@ public class Botao extends Actor
     public void act()
     {
         wasClickedCheck();
-        keyBindCheck();
+        if(keyBind != null){
+            keyBindCheck();
+        }
+        
     }
     public void wasClickedCheck(){
         if(Greenfoot.mouseClicked(this)){
@@ -28,10 +32,14 @@ public class Botao extends Actor
     }
     public void keyBindCheck()
     {
-        if(Greenfoot.isKeyDown(keyBind))
+        if(Greenfoot.isKeyDown(keyBind) && keyBindTimer == 0 )
         {
-        clicked();
-        System.out.println("001");
+            System.out.println("001");
+            clicked();
+            keyBindTimer = 30;
+        }
+        if(keyBindTimer > 0) {
+            keyBindTimer--;
         }
     }
 }
