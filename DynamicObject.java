@@ -14,11 +14,9 @@ public class DynamicObject extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act()
-    {
-        
+    {        
         Gravity();
-        velocidadeVertical = updateVerticalSpeed(onGround());
-        
+        velocidadeVertical = updateVerticalSpeed(onGround());        
     }
 
     public void Gravity(){
@@ -27,8 +25,11 @@ public class DynamicObject extends Actor
             setLocation(getX(), getY() + velocidadeVertical);
             
         }
-        else if(onGround()&&!isTouchingCelling()){
+        if(onGround()){
             setLocation(getX(),getOneIntersectingObject(Floor.class).getY()-50);
+        }
+        if(isTouchingCelling()){
+            setLocation(getX(),getOneIntersectingObject(Floor.class).getY()+55);
         }
     }
     public boolean onGround(){
@@ -39,7 +40,7 @@ public class DynamicObject extends Actor
         else return false;
     }
     public int isTouchingWall(){
-        Actor a = getOneIntersectingObject(Wall.class);
+        Actor  a = getOneIntersectingObject(Wall.class);              
         //á direita
         if(a != null && a.getX()>getX()){
             return 1;
@@ -51,11 +52,12 @@ public class DynamicObject extends Actor
         return 0;
     }
     public boolean isTouchingCelling(){
-        Actor a = getOneIntersectingObject(Wall.class);
+        Actor a = getOneIntersectingObject(Floor.class);
         if(a != null && a.getY()<getY()){
+            velocidadeVertical = 0;
             return true;
         }
-        return false;
+        else return false;
     }
     public int updateVerticalSpeed(boolean onGround){
         if (onGround){
