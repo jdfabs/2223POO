@@ -8,7 +8,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Level1 extends Stages
 {
-
     /**
      * Constructor for objects of class Level1.
      * 
@@ -35,11 +34,21 @@ public class Level1 extends Stages
         Player player1 = new Player();
         Player player2 = new Player();
         
+        Box box1 = new Box();
+        addObject(box1, 500, 300);
+        
         addObject(player1, 200, 300);
-        player1.setup("w", "a", "d", "s");
+        player1.setup("w", "a", "d", "s", "f");
         addObject(player2, 800, 300);
-        player2.setup("up", "left", "right", "down");
+        player2.setup("up", "left", "right", "down", ".");
+        
+        Greenfoot.setSpeed(50);
         
     
     }
+    public void act()
+    {
+        timer();
+    }
+    
 }

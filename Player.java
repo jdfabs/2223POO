@@ -8,7 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Player extends DynamicObject
 {
-    public String  up = "w", down = "s", left = "a", right = "d" ;
+    public String  up = "w", down = "s", left = "a", right = "d", action = "f" ;
+    
     
     int velocidadeHorizontal = 0;
     int merda;
@@ -17,7 +18,9 @@ public class Player extends DynamicObject
     public void act()
     {        
         super.act();
-        movimento();   
+        movimento();
+        //pickObject();
+        
         
     }
     public void movimento(){
@@ -62,11 +65,23 @@ public class Player extends DynamicObject
             velocidadeHorizontal = velocidadeHorizontal*30/31 ;
         }        
     }
-    public void setup(String upKey, String leftKey, String rightKey, String downKey){        
+    public void setup(String upKey, String leftKey, String rightKey, String downKey, String actionKey){        
             up = upKey;
             left = leftKey; 
             right = rightKey;
-            down = downKey;       
+            down = downKey; 
+            action = actionKey;
     }
-    
+    /*public void pickObject()
+    {
+        if(box== null && Greenfoot.isKeyDown(action) && isTouchingBox() == 1)
+        {
+            box = (Box) getObjectsInRange(25, Box.class).get(0);
+            setLocation(300,450);
+        }
+        if(box != null && Greenfoot.isKeyDown(action))
+        {
+            box = null;
+        }
+    }*/
 }

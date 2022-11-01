@@ -58,7 +58,7 @@ public class DynamicObject extends Actor
         return false;
     }
     public int updateVerticalSpeed(boolean onGround){
-        if (onGround() || isTouchingCelling()){
+        if (onGround){
             return 0;
         }
         else{
@@ -66,5 +66,10 @@ public class DynamicObject extends Actor
         }
         
     }
-
+    public int isTouchingPlayer()
+    {
+        Actor a = getOneIntersectingObject(Player.class);
+        return 1;
+    }
 }
+

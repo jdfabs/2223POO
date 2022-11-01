@@ -9,7 +9,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Stages extends World
 {
     private double initTime = System.currentTimeMillis();
-    private double time;
+    public int time = 60;
+    public int timer = 3600;
     /**
      * Constructor for objects of class Level.
      * 
@@ -20,8 +21,12 @@ public class Stages extends World
     }
     public void timer()
     {
-        time = 60;
-        showText("Time left: " + time, 150,150);
-        time = time - ((System.currentTimeMillis() - initTime) / 1000);
+        showText("Time left: " + time, 50,50);
+        timer--;
+        if (timer % 55 == 0)
+            {
+                time--;
+            }
+        //time - ((System.currentTimeMillis() - initTime) / 1000);
     }
 }
