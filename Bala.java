@@ -38,7 +38,7 @@ public class Bala extends DynamicObject
     {
         movimentoBala(direcao);
         removeBala();
-        System.out.println("direçao: " + direcao);
+        
     }
     public void removeBala()
     {
