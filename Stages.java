@@ -17,17 +17,18 @@ public class Stages extends World
     public Stages()
     {
         super(1024,832,1);
+        borderSetup();
     }
 
-    /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
+    public void borderSetup(){
+        int i = 0;
+        for(i = 0; i<=32; i++){
+            addObject(new Wall1(),32*(i+1)-16,16);
+            addObject(new Wall1(),32*(i+1)-16,32*26-16);
+        }
+        for(i = 0; i<=30; i++){
+            addObject(new Wall1(),16,32*(i+1)-16);
+            addObject(new Wall1(),32*32-16,32*(i+1)-16);
+        }
     }
 }

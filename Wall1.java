@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Wall1 extends StaticObject
+public class Wall1 extends Solid
 {
     private GreenfootImage Wall1Img;
     public Wall1()
