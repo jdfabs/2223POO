@@ -8,11 +8,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class DynamicObject extends Actor
 {
-    public int velocidadeVertical = 0;
+    /*public int velocidadeVertical = 0;
     /**
      * Act - do whatever the Jogador wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+     *
     public void act()
     {        
         Gravity();
@@ -72,6 +72,6 @@ public class DynamicObject extends Actor
     {
         Actor a = getOneIntersectingObject(Player.class);
         return 1;
-    }
+    }*/
 }
 

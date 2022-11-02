@@ -8,12 +8,13 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Player extends DynamicObject
 {
-    public String  up = "w", down = "s", left = "a", right = "d" ;
-    int saltoTimer = 0;
+    /*public String  up = "w", down = "s", left = "a", right = "d" ;
+    
     
     int velocidadeHorizontal = 0;
     int velocidadeMax = 8;
-    int forcaSalto = 20;    
+    private _type_ saltoTimer;
+       
     public void act()
     {        
         super.act();
@@ -50,7 +51,7 @@ public class Player extends DynamicObject
     
         
         if(Greenfoot.isKeyDown(up) && onGround() && velocidadeVertical >= 0  && saltoTimer == 0){
-            velocidadeVertical -= forcaSalto;
+            
             saltoTimer = 10;
         }
         if(saltoTimer > 0 && onGround()) {
@@ -68,6 +69,6 @@ public class Player extends DynamicObject
             left = leftKey; 
             right = rightKey;
             down = downKey;       
-    }
+    }*/
     
 }

@@ -13,30 +13,18 @@ public class Level1 extends Stages
      * Constructor for objects of class Level1.
      * 
      */
+    public Level1(){
+        setupLevel();
+    }
 
     public void setupLevel(){
-        addFloor(getWidth()*3/4,750,600,50); //plataforma mais a baixo
-        addFloor(getWidth()*3/4,600,480,50);//2ª plataforma a contar de baixo
-        addFloor(getWidth()/4,400,200,50); //plataforma a voar
-        addFloor(getWidth()*5/6,200,300,50); //plataforma final
-        
-        addWall(getWidth()/2+30,getHeight()/2+120,50,75);
-        
-        
-        PressurePlate pressurePlate = new PressurePlate();
-        addObject(pressurePlate, getWidth()*5/6, 720);
-        
-        Door door = new Door();
-        addObject(door, getWidth()/2+50, 825);
-        pressurePlate.setTarget(door);
-        door.diferencaAberto = 150;
-        
-        for(int i=0; i < 5; i++){
-            addObject(new Spikes(), 50+ 30*i, 860);
+        int i = 0;
+        for(i = 0; i<=32; i++){
+            addObject(new Wall1(),32*(i+1)-16,16);
+            addObject(new Wall1(),32*(i+1)-16,32*26-16);
         }
-        for(int i=0; i < 3; i++){
-            addObject(new Spikes(), getWidth()/2+80+ 30*i, 560);
+        for(i = 0; i<=30; i++){
+            addObject(new Wall1(),32*(i+1)-16,16);
         }
-    
     }
 }

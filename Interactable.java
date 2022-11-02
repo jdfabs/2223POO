@@ -18,18 +18,15 @@ public class Interactable extends StaticObject
     {
         isPlayerTouching();
     }
-    public void isPlayerTouching(){
+    public boolean isPlayerTouching(){
         Actor player = getOneIntersectingObject(Player.class);
-        if(player != null && newPress == true){
-            newPress = false;
-            effect();
-        }
-        else if (player == null && newPress==false){
-            newPress = true;
-        }
-        return;
+        if(player != null){
+            //System.out.println("player is touching");
+            return true;
+        }else  
+        return false;
     }
     public void effect(){
-        
+        System.out.println("player is touching");
     }
 }
