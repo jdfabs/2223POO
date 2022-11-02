@@ -12,8 +12,6 @@ public class Stages extends World
     private int x;
     public Player player1;
     public Player player2;
-    public HPText hpText1;
-    public HPText hpText2;
 
     /**
      * Constructor for objects of class Stages
@@ -38,16 +36,12 @@ public class Stages extends World
     }
     public void spawnPlayers(){
         player1 = new Player();
-        hpText1 = new HPText();
         addObject(player1, getWidth()/4,200);
-        addObject(hpText1, 100,50);
-        player1.setup("w","a","d","s", hpText1);
+        player1.setup("w","a","d","s");
         
         player2 = new Player();
-        hpText2 = new HPText();
         addObject(player2, getWidth()*3/4 ,200 );
-        addObject(hpText2, getWidth()-100,50);
-        player2.setup("up","left","right","down", hpText2);
+        player2.setup("up","left","right","down");
         
     }
 }

@@ -21,11 +21,12 @@ public class Interactable extends StaticObject
     public boolean isPlayerTouching(){
         Actor player = getOneIntersectingObject(Player.class);
         if(player != null){
+            //System.out.println("player is touching");
             return true;
         }else  
         return false;
     }
     public void effect(){
-        
+        System.out.println("player is touching");
     }
 }

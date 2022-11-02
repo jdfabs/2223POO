@@ -9,19 +9,13 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Player extends DynamicObject
 {
     public String  up = "w", down = "s", left = "a", right = "d" ;
-    public int hp = 3;
-    public boolean damageReady= true;
-    public int damageCooldown = 0;
-    public HPText hpText =  null;
-    
     
        
     public void act()
     {        
         super.act();
-        movimento(); 
-        loseHP(); 
-        checkGameLoss();
+        movimento();   
+        
     }
     public void movimento(){
         if(Greenfoot.isKeyDown(left) && isWalkable("left")){
@@ -41,35 +35,12 @@ public class Player extends DynamicObject
             //System.out.println("down");
         }
     }
-    public void checkGameLoss(){
-        if(hp == 0){
-            Greenfoot.setWorld(new GameEnd());
-        }
-    }
 
-    public void setup(String upKey, String leftKey, String rightKey, String downKey, HPText text){        
+    public void setup(String upKey, String leftKey, String rightKey, String downKey){        
             up = upKey;
             left = leftKey; 
             right = rightKey;
-            down = downKey;
-            hpText = text;            
+            down = downKey;       
     }
-    public void loseHP(){
-        Actor spike = getOneIntersectingObject(Spike.class);
-        Actor bala = getOneIntersectingObject(Bala.class);
-        
-        if(damageCooldown > 0){
-            damageCooldown--;
-            
-        }
-        else if(damageCooldown == 0){
-            damageReady = true;
-        }        
-        if(damageReady && (spike != null || bala != null)){
-            hp--;
-            hpText.changeText(hp);
-            damageReady = false;
-            damageCooldown = 120;
-        }        
-    }
+    
 }

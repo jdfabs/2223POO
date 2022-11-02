@@ -8,7 +8,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Spike extends Interactable
 {
-    
     /**
      * Act - do whatever the Spike wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -17,5 +16,4 @@ public class Spike extends Interactable
     {
         // Add your action code here.
     }
-
 }
