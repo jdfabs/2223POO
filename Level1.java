@@ -14,8 +14,11 @@ public class Level1 extends Stages
      * 
      */
     public Level1(){
+            
+        Cannon cannon1 = new Cannon(2);
+        addObject(new Cannon(2),300,100);
         
     }
-
+    
 
 }
