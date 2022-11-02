@@ -16,7 +16,7 @@ public class Interactable extends StaticObject
     public boolean newPress = true;
     public void act()
     {
-        isPlayerTouching();
+        
     }
     public boolean isPlayerTouching(){
         Actor player = getOneIntersectingObject(Player.class);
