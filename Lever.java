@@ -8,7 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Lever extends Interactable
 {
-    private GreenfootImage LeverImg;
+    private GreenfootImage LeverDeactivated;
+    private GreenfootImage LeverActivated;
     public int direction = 0;
     public Door target[] = new Door[10];
     public boolean triggered = false;
@@ -16,8 +17,11 @@ public class Lever extends Interactable
     
     public Lever()
     {
-        LeverImg = new GreenfootImage("Button.png");        
-        setImage(LeverImg);
+        LeverActivated = new GreenfootImage("LeverActivated.png");        
+        setImage(LeverActivated);
+        LeverDeactivated = new GreenfootImage("LeverDeactivated.png");        
+        setImage(LeverDeactivated);
+        
     }
     public void act()
     {
@@ -28,17 +32,19 @@ public class Lever extends Interactable
         switch(dir){
             case 0:
                 setLocation(getX(),getY()-15);
+                setRotation(45);
                 break;
             case 1:
                 setLocation(getX()+15,getY());
-                setRotation(90);
+                setRotation(-90);
                 break;
             case 2:
                 setLocation(getX(),getY()+15);
+                setRotation(45);
                 break;
             case 3:
                 setLocation(getX()-15,getY());
-                setRotation(90);
+                setRotation(45);
                 break;
         }
     }
@@ -48,6 +54,7 @@ public class Lever extends Interactable
             for(i=0;i<target.length;i++){
                 if(target[i]!=null){
                     target[i].close();
+                    setImage(LeverDeactivated);
                 }                
             }
             System.out.println("Door is now closed");
@@ -59,6 +66,7 @@ public class Lever extends Interactable
             for(i=0;i<target.length;i++){
                 if(target[i]!=null){
                     target[i].open();
+                    setImage(LeverActivated);
                 }                
             }
             System.out.println("Door is now Open");

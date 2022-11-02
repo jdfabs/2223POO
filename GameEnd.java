@@ -15,5 +15,8 @@ public class GameEnd extends Menu
      */
     public GameEnd()
     {
+        showText("ah seu tonte, PERDESTES", 512, 300);
+        showText("Tempo: ", 512, 416);
+        
     }
 }

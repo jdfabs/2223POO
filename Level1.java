@@ -27,6 +27,11 @@ public class Level1 extends Stages
     public Level1()
     {
          addStage();
+         timer();
+    }
+    public void act()
+    {
+        timer();
     }
     private void addStage()
     {

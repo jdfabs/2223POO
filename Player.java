@@ -14,7 +14,10 @@ public class Player extends DynamicObject
     public int damageCooldown = 0;
     public HPText hpText =  null;
     
-    
+    private GreenfootImage frente;
+    private GreenfootImage esquerda;
+    private GreenfootImage direita;
+    private GreenfootImage costas;
        
     public void act()
     {        
@@ -24,20 +27,28 @@ public class Player extends DynamicObject
         checkGameLoss();
     }
     public void movimento(){
+        frente = new GreenfootImage("PigFrente.png");
+        esquerda = new GreenfootImage("PigEsquerda.png");
+        direita = new GreenfootImage("PigDireita.png");
+        costas = new GreenfootImage("PigCostas.png");
         if(Greenfoot.isKeyDown(left) && isWalkable("left")){
             setLocation(getX()-3,getY());
+            setImage(esquerda);
             //System.out.println("left");
         }
         if(Greenfoot.isKeyDown(right) && isWalkable("right")){
             setLocation(getX()+3,getY());
+            setImage(direita);
             //System.out.println("right");
         }
         if(Greenfoot.isKeyDown(up) && isWalkable("up")){
             setLocation(getX(),getY()-3);
+            setImage(costas);
             //System.out.println("up");
         }
         if(Greenfoot.isKeyDown(down) && isWalkable("down")){
             setLocation(getX(),getY()+3);
+            setImage(frente);
             //System.out.println("down");
         }
     }

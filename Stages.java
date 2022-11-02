@@ -14,6 +14,8 @@ public class Stages extends World
     public Player player2;
     public HPText hpText1;
     public HPText hpText2;
+    public int time = 0;
+    public int counter = 0;
 
     /**
      * Constructor for objects of class Stages
@@ -117,5 +119,14 @@ public class Stages extends World
                 
                 break;
         }
+    }
+    public void timer()
+    {   
+        counter++;
+        if((counter)%60 == 0)
+        {
+            time++;
+        }
+        showText("Tempo decorrido: " + time,512, 15);
     }
 }
