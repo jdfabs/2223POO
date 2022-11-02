@@ -8,4 +8,6 @@ comment2.params=
 comment2.target=void\ borderSetup()
 comment3.params=
 comment3.target=void\ spawnPlayers()
-numComments=4
+comment4.params=entityStr\ lineStartX\ lineStartY\ direction\ amount
+comment4.target=void\ spawnRow(java.lang.String,\ int,\ int,\ int,\ int)
+numComments=5

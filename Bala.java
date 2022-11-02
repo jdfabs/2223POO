@@ -8,13 +8,31 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Bala extends DynamicObject
 {
+    private GreenfootImage balaImg;
     public int direcao;
     /**
      * Act - do whatever the bala wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public Bala(int dir){
+        balaImg = new GreenfootImage("brick.png");        
+        setImage(balaImg);
         direcao = dir;
+        switch(dir){
+            case 0:
+                setRotation(90);
+                break;
+            case 1:
+                setRotation(-180);
+                break;
+            case 2:
+                setRotation(90);
+                break;
+            case 3:
+                setRotation(0);
+                break;
+        
+        }
     }
     public void act()
     {

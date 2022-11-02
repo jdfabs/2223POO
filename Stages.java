@@ -50,4 +50,72 @@ public class Stages extends World
         player2.setup("up","left","right","down", hpText2);
         
     }
+    public void spawnRow(String entityStr,int lineStartX, int lineStartY,int direction, int amount){
+       
+        switch(entityStr){
+            case "Wall1":
+                Wall1 wall = new Wall1();
+                int i = 0;
+                
+                switch(direction){
+                    case 0:
+                        for(i=0; i < amount; i++){
+                            wall = new Wall1();
+                            addObject(wall,32*lineStartX+16 ,32*(lineStartY-i)+16);
+                    }
+                        break;
+                    case 1:
+                        for(i=0; i < amount; i++){
+                            wall = new Wall1();
+                            addObject(wall,32*(lineStartX+i)+16 ,32*lineStartY+16);
+                        }
+                        break;
+                    case 2:
+                        for(i=0; i < amount; i++){
+                            wall = new Wall1();
+                            addObject(wall,32*lineStartX+16 ,32*(lineStartY+i)+16);
+                        }
+                            break;
+                    case 3:
+                        for(i=0; i < amount; i++){
+                            wall = new Wall1();
+                            addObject(wall,32*(lineStartX-i)+16 ,32*lineStartY+16);
+                        }
+                        break;
+                    }            
+                
+                break;
+            case "Spike":
+                Spike spike = new Spike();
+                
+                switch(direction){
+                    case 0:
+                        for(i=0; i < amount; i++){
+                            spike = new Spike();
+                            addObject(spike,32*lineStartX+16 ,32*(lineStartY-i)+16);
+                        }
+                        break;
+                    case 1:
+                        for(i=0; i < amount; i++){
+                            spike = new Spike();
+                            addObject(spike,32*(lineStartX+i)+16 ,32*lineStartY+16);
+                        }
+                        break;
+                    case 2:
+                        for(i=0; i < amount; i++){
+                            spike = new Spike();
+                            addObject(spike,32*lineStartX+16 ,32*(lineStartY+i)+16);
+                        }
+                        break;
+                    case 3:
+                        for(i=0; i < amount; i++){
+                            spike = new Spike();
+                            addObject(spike,32*(lineStartX-i)+16 ,32*lineStartY+16);
+                        }
+                        break;
+                    }            
+                
+                break;
+        }
+    }
 }
