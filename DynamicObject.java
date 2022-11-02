@@ -20,19 +20,19 @@ public class DynamicObject extends Actor
         switch(direction){
             case "up":
                 wall = getOneObjectAtOffset(0, -16, Solid.class);
-                System.out.println(0);
+                
                 break;
             case "right":
                 wall = getOneObjectAtOffset(16, 0, Solid.class);
-                System.out.println(1);
+                
                 break;
             case "down":
                 wall = getOneObjectAtOffset(0, 16, Solid.class);
-                System.out.println(2);
+                
                 break;
             case "left":
                 wall = getOneObjectAtOffset(-16, 0, Solid.class);
-                System.out.println(3);
+                
                 break;
         }      
         
