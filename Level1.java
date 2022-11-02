@@ -91,13 +91,9 @@ public class Level1 extends Stages
         addObject(new Cannon(2),16+29*32 ,32*0+16);
         addObject(new Cannon(2),16+28*32 ,32*0+16);
         spawnRow("Wall1",27, 4,2, 7);
+        spawnRow("Wall1",25, 4,1, 2);
+        spawnRow("Wall1",24, 1,2, 4);       
 
-        for( i = 0; i < 2; i++){
-            addObject(new Wall1(),16+(25+i)*32 ,32*4+16);
-        }
-        for( i = 0; i < 4; i++){
-            addObject(new Wall1(),16+24*32 ,32*(1+i)+16);
-        }
         
         pressPlate2 = new PressPlate();
         pressPlate3 = new PressPlate();
