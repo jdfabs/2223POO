@@ -11,6 +11,8 @@ public class Level1 extends Stages
     public PressPlate pressPlate1 = null;
     public PressPlate pressPlate2 = null;
     public PressPlate pressPlate3 = null;
+    public PressPlate pressPlate4 = null;
+    public PressPlate pressPlate5 = null;
     public Door door1 = null;
     public Door door2 = null;
     public Door door3 = null;
@@ -19,6 +21,14 @@ public class Level1 extends Stages
     public Door door6 = null;
     public Door door7 = null;
     public Door door8 = null;
+    public Door door9 = null;
+    public Door door10 = null;
+    public Door door11 = null;
+    public Door door12 = null;
+    public Door door13 = null;
+    public Door door14 = null;
+    public Door door15 = null;
+    public Door door16 = null;
     public Lever lever1 = null;
     /**
      * Constructor for objects of class Level1.
@@ -37,7 +47,22 @@ public class Level1 extends Stages
         int i = 0;
         
         spawnRow("Wall1",21, 21,1, 10);
-        spawnRow("Wall1",21, 17,1, 10);    
+        spawnRow("Wall1",21, 17,1, 10);
+        spawnRow("Spike",18, 19,2, 6);
+        spawnRow("Wall1",12, 14,2, 11);
+        spawnRow("Wall1",12, 13,1, 9);
+        spawnRow("Wall1",27, 4,2, 7);
+        spawnRow("Wall1",25, 4,1, 2);
+        spawnRow("Wall1",24, 1,2, 4);
+        spawnRow("Spike",26, 5,2, 6);   
+        spawnRow("Spike",23, 1,2, 4); 
+        spawnRow("Spike",19, 1,2, 8);   
+        spawnRow("Spike",23, 8,2, 3);
+        spawnRow("Wall1",22, 8,2, 3);
+        spawnRow("Wall1",21, 9,3, 3); 
+        spawnRow("Wall1",18, 1,2, 9);
+        spawnRow("Spike",20, 8,1, 3);
+        spawnRow("Spike",23, 5,1, 3);
  
         
         pressPlate1 = new PressPlate();
@@ -77,9 +102,7 @@ public class Level1 extends Stages
         
         
         
-        spawnRow("Spike",18, 19,2, 6);
-        spawnRow("Wall1",12, 14,2, 11);
-        spawnRow("Wall1",12, 13,1, 9);
+        
         for( i = 0; i < 3; i++){
             addObject(new Cannon(2),16+(21+i*3)*32 ,32*13+16);
         }
@@ -90,9 +113,7 @@ public class Level1 extends Stages
         addObject(new Cannon(2),16+30*32 ,32*0+16);
         addObject(new Cannon(2),16+29*32 ,32*0+16);
         addObject(new Cannon(2),16+28*32 ,32*0+16);
-        spawnRow("Wall1",27, 4,2, 7);
-        spawnRow("Wall1",25, 4,1, 2);
-        spawnRow("Wall1",24, 1,2, 4);       
+        
 
         
         pressPlate2 = new PressPlate();
@@ -109,35 +130,82 @@ public class Level1 extends Stages
         pressPlate2.target[1] = door8;
         pressPlate3.target[0] = door7;
         pressPlate3.target[1] = door8;
-        for( i = 0; i < 6; i++){
-            addObject(new Spike(),16+26*32 ,32*(5+i)+16);
-        }
-        for( i = 0; i < 4; i++){
-            addObject(new Spike(),16+23*32 ,32*(1+i)+16);
-        }
-        for( i = 0; i < 8; i++){
-            addObject(new Spike(),16+19*32 ,32*(1+i)+16);
-        }
-        for( i = 0; i < 3; i++){
-            addObject(new Spike(),16+23*32 ,32*(8+i)+16);
-        }
-        for( i = 0; i < 3; i++){
-            addObject(new Wall1(),16+22*32 ,32*(8+i)+16);
-        }
-        for( i = 0; i < 3; i++){
-            addObject(new Wall1(),16+(19+i)*32 ,32*9+16);
-        }
-        for( i = 0; i < 9; i++){
-            addObject(new Wall1(),16+18*32 ,32*(1+i)+16);
-        }
-        for( i = 0; i < 4; i++){
-            addObject(new Spike(),16+(20+i)*32 ,32*8+16);
-        }
-        for( i = 0; i < 3; i++){
-            addObject(new Spike(),16+(23+i)*32 ,32*5+16);
-        }
         
-        spawnRow("Wall1",5, 3,2, 4);
+
+
+        
+        spawnRow("Wall1",12, 5,2, 8);        
+        spawnRow("Wall1",15, 9,0, 8);
+        
+        
+        pressPlate4 = new PressPlate();
+        pressPlate5 = new PressPlate();
+        addObject(pressPlate4,32*13+16,32*7+16);
+        addObject(pressPlate5,32*17+16,32*3+16);
+        door9 = new Door();
+        door10 = new Door();
+        door11 = new Door();
+        door12 = new Door(); 
+        door13 = new Door();
+        door14 = new Door();
+        door15 = new Door();
+        door16 = new Door(); 
+        addObject(door9,16+13*32,32*5+16);
+        addObject(door10,16+14*32,32*5+16); 
+        addObject(door11,16+18*32,32*5+16);
+        addObject(door12,16+19*32,32*5+16);
+        
+        addObject(door13,16+11*32,32*9+16);
+        addObject(door14,16+12*32,32*9+16); 
+        addObject(door15,16+16*32,32*9+16);
+        addObject(door16,16+17*32,32*9+16); 
+        door9.setup(2,3);
+        door10.setup(2,3);
+        door11.setup(2,3);
+        door12.setup(2,3);
+        door13.setup(2,1);
+        door14.setup(2,1);
+        door15.setup(2,1);
+        door16.setup(2,1);
+        door9.setRotation(90);
+        door10.setRotation(90);
+        door11.setRotation(90);
+        door12.setRotation(90);
+        door13.setRotation(90);
+        door14.setRotation(90);
+        door15.setRotation(90);
+        door16.setRotation(90);
+        
+        
+        pressPlate4.target[0] = door13;
+        pressPlate4.target[1] = door14;
+        pressPlate5.target[0] = door10;
+        pressPlate5.target[1] = door9;
+        
+        pressPlate4.target[2] = door15;
+        pressPlate4.target[3] = door16;
+        
+        pressPlate4.target[4] = door11;
+        pressPlate4.target[5] = door12;
+        
+        
+        
+        spawnRow("Wall1",8, 2,1, 7);
+        spawnRow("Wall1",8, 3,2, 18);
+        spawnRow("Wall1",4, 1,2, 20);
+        addObject(new Spike(),16+5*32,32*3+16);
+        addObject(new Spike(),16+7*32,32*6+16);
+        addObject(new Spike(),16+5*32,32*9+16);
+        addObject(new Spike(),16+7*32,32*12+16);
+        addObject(new Spike(),16+5*32,32*14+16);
+        addObject(new Spike(),16+7*32,32*16+16);
+        addObject(new Spike(),16+5*32,32*18+16);
+        addObject(new Cannon(0),16+9*32 ,32*25+16);
+        addObject(new Cannon(0),16+10*32 ,32*25+16);
+        addObject(new Cannon(0),16+11*32 ,32*25+16);
+        
+        spawnRow("Spike",13, 3,1, 2);
+        
         
     }
 
