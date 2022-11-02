@@ -6,4 +6,6 @@ comment1.target=Stages()
 comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Stages\r\n
 comment2.params=
 comment2.target=void\ borderSetup()
-numComments=3
+comment3.params=
+comment3.target=void\ spawnPlayers()
+numComments=4
