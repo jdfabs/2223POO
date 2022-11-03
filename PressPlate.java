@@ -10,7 +10,7 @@ public class PressPlate extends Interactable
 {
     private GreenfootImage PressPlateImg;
     public Door target[] = new Door[10];
-    public boolean triggered = false;
+    private boolean triggered = false;
     
     public PressPlate()
     {
@@ -22,7 +22,7 @@ public class PressPlate extends Interactable
     {
         trigger();
     }
-    public void trigger(){
+    private void trigger(){
         if(isPlayerTouching() && !triggered){
             int i = 0;
             for(i=0;i<target.length;i++){

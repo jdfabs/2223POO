@@ -13,12 +13,7 @@ public class Player extends DynamicObject
     public boolean damageReady= true;
     public int damageCooldown = 0;
     public HPText hpText =  null;
-    
-    private GreenfootImage frente;
-    private GreenfootImage esquerda;
-    private GreenfootImage direita;
-    private GreenfootImage costas;
-       
+           
     public void act()
     {        
         super.act();
@@ -26,33 +21,22 @@ public class Player extends DynamicObject
         loseHP(); 
         checkGameLoss();
     }
-    public void movimento(){
-        frente = new GreenfootImage("PigFrente.png");
-        esquerda = new GreenfootImage("PigEsquerda.png");
-        direita = new GreenfootImage("PigDireita.png");
-        costas = new GreenfootImage("PigCostas.png");
+    private void movimento(){
         if(Greenfoot.isKeyDown(left) && isWalkable("left")){
             setLocation(getX()-3,getY());
-            setImage(esquerda);
-            //System.out.println("left");
+            
         }
         if(Greenfoot.isKeyDown(right) && isWalkable("right")){
             setLocation(getX()+3,getY());
-            setImage(direita);
-            //System.out.println("right");
         }
         if(Greenfoot.isKeyDown(up) && isWalkable("up")){
             setLocation(getX(),getY()-3);
-            setImage(costas);
-            //System.out.println("up");
         }
         if(Greenfoot.isKeyDown(down) && isWalkable("down")){
             setLocation(getX(),getY()+3);
-            setImage(frente);
-            //System.out.println("down");
         }
     }
-    public void checkGameLoss(){
+    private void checkGameLoss(){
         if(hp == 0){
             Greenfoot.setWorld(new GameEnd());
         }
@@ -65,7 +49,7 @@ public class Player extends DynamicObject
             down = downKey;
             hpText = text;            
     }
-    public void loseHP(){
+    private void loseHP(){
         Actor spike = getOneIntersectingObject(Spike.class);
         Actor bala = getOneIntersectingObject(Bala.class);
         
@@ -78,6 +62,7 @@ public class Player extends DynamicObject
         }        
         if(damageReady && (spike != null || bala != null)){
             hp--;
+            
             hpText.changeText(hp);
             damageReady = false;
             damageCooldown = 120;

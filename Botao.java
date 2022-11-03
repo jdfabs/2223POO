@@ -34,7 +34,7 @@ public class Botao extends Actor
     {
         if(Greenfoot.isKeyDown(keyBind) && keyBindTimer == 0 )
         {
-            System.out.println("001");
+            
             clicked();
             keyBindTimer = 30;
         }

@@ -9,10 +9,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Door extends Solid
 {
     private GreenfootImage doorImg;
-    public int openDirection = 0;
-    public int openDistance = 0;
-    public int closedX;
-    public int closedY;
+    private int openDirection = 0;
+    private int openDistance = 0;
+    private int closedX;
+    private int closedY;
     
     /**
      * Act - do whatever the Door wants to do. This method is called whenever
@@ -24,16 +24,11 @@ public class Door extends Solid
         
         setImage(doorImg);
     }
-    public void act()
-    {
-    
-    }
     public void open(){
         switch(openDirection)
         {
             case 0:
                 setLocation(closedX,closedY-32*openDistance);  
-                System.out.println(closedY);
                 break;
             case 1:
                 setLocation(closedX+32*openDistance,closedY);
@@ -52,7 +47,7 @@ public class Door extends Solid
     public void setup(int a, int b){
         openDistance = a;        
         openDirection = b;
-        System.out.println(b);
+        
         closedX = getX();
         closedY = getY();
     }

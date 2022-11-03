@@ -30,13 +30,13 @@ public class MuteButton extends Botao
     {       
             if(verificaMusica==false)
             {
-                getWorldOfType(MenuInicial.class).somFundo().pause();
+                getWorldOfType(MenuStart.class).somFundo().pause();
                 verificaMusica = true;
                 setImage(muted);
             }
             else
             {
-                getWorldOfType(MenuInicial.class).somFundo().playLoop();     
+                getWorldOfType(MenuStart.class).somFundo().playLoop();     
                 verificaMusica = false;
                 setImage(unMuted);
             }

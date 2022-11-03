@@ -20,7 +20,7 @@ public class ReturnButton extends Botao
     
     public void clicked()
     {
-        super.clicked();
+        
         Greenfoot.setWorld(new MenuInicial());
     }
 }

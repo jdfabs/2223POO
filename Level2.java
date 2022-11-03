@@ -13,7 +13,14 @@ public class Level2 extends Stages
      * Constructor for objects of class Level2.
      * 
      */
-    public Level2()
+    public Level2(int time)
     {
+         addStage();
+         timer.timeLeft = time;
+         timer.updateTimer();
+    }
+    private void addStage()
+    {
+        
     }
 }

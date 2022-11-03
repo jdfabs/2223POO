@@ -9,11 +9,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class MenuInicial extends Menu
 {
     private GreenfootImage menuInicial;
-    private GreenfootSound som;
-    /**
-     * Constructor for objects of class MenuInicial.
-     * 
-     */
+    
+    private boolean musicaOn = false;
+    
     public MenuInicial()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -32,12 +30,8 @@ public class MenuInicial extends Menu
         MuteButton mute = new MuteButton();
         addObject(mute, getWidth()-950, 50);
         
-        som = new GreenfootSound("Som.mp3");
-        //som.playLoop();
-        
+       
     }
-    public GreenfootSound somFundo()
-    {
-        return som;
-    }
+
+
 }
