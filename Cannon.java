@@ -10,14 +10,16 @@ public class Cannon extends Solid
 {
     private GreenfootImage cannonImg;
     private int dispara = 0;
-    public int direcao;
+    private int direcao;
+    private int shootingSpeed;
     /**
      * Act - do whatever the Cannon wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    public Cannon(int dir){    
+    public Cannon(int dir, int speed){    
         cannonImg = new GreenfootImage("dropper_front.png");        
         setImage(cannonImg);
+        shootingSpeed = speed;
         switch(dir){
             case 0:
                 setRotation(180);
@@ -38,10 +40,10 @@ public class Cannon extends Solid
     {
         disparar();
     }
-    public void disparar()
+    private void disparar()
     {
         dispara++;
-        if(dispara + Greenfoot.getRandomNumber(500) >= 600)
+        if(dispara + Greenfoot.getRandomNumber(500) >= shootingSpeed)
         {
             Bala bala1 = new Bala(direcao);
             getWorld().addObject(bala1, getX(), getY());

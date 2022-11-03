@@ -8,15 +8,17 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Level1 extends Stages
 {
+    public int cannonSpeed;
     /**
      * Constructor for objects of class Level1.
      * 
      */
     public Level1(int time)
     {
-         addStage();
          timer.timeLeft = time;
          timer.updateTimer();
+         cannonSpeed = 500+time;
+         addStage();
     }
     private void addStage()
     {
@@ -49,14 +51,14 @@ public class Level1 extends Stages
 
 
         for( i = 0; i < 3; i++){
-            addObject(new Cannon(2),16+(21+i*3)*32 ,32*13+16);
+            addObject(new Cannon(2, cannonSpeed),16+(21+i*3)*32 ,32*13+16);
         }
         for( i = 0; i < 2; i++){
             addObject(new Wall1(),16+(22+i*3)*32 ,32*13+16);
             addObject(new Wall1(),16+(23+i*3)*32 ,32*13+16);
         }
         for( i = 0; i < 3; i++){
-            addObject(new Cannon(2),16+(28+i)*32 ,32*0+16);
+            addObject(new Cannon(2, cannonSpeed),16+(28+i)*32 ,32*0+16);
         }
         
         spawnDoorPressPlate(26, 2, 21, 2, 27, 11, 2, 2);    //2press:1Door
@@ -77,10 +79,10 @@ public class Level1 extends Stages
         addObject(new Spike(),16+7*32,32*16+16);
         addObject(new Spike(),16+5*32,32*18+16);
         for( i = 0; i < 3; i++){
-            addObject(new Cannon(0),16+(9+i)*32 ,32*25+16);
+            addObject(new Cannon(0,cannonSpeed),16+(9+i)*32 ,32*25+16);
         }
         for( i = 0; i < 8; i++){
-            addObject(new Cannon(1),16+0*32 ,32*(6+i*2)+16);
+            addObject(new Cannon(1,cannonSpeed),16+0*32 ,32*(6+i*2)+16);
         }
         spawnDoorLever(7, 19, 1, 8, 24, 4, 0);
         spawnDoorLever(9, 19, 3, 7, 20, 3, 3);

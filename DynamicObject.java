@@ -9,10 +9,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class DynamicObject extends Actor
 {
-    public void act()
-    {        
-              
-    }
     
     public boolean isWalkable(String direction){
         Actor wall = null;

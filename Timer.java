@@ -9,7 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Timer extends Actor
 {
     public int timeLeft = 300;
-    private int timeCounter; // to count act cycles in a single set
+    private int timeCounter;
     /**
      * Act - do whatever the Timer wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -22,7 +22,7 @@ public class Timer extends Actor
     {
         countDown();
     }
-    public void countDown(){
+    private void countDown(){
         timeCounter = (timeCounter+1)%55; //%55 porque GreenFoot corre a 55FPS
         if (timeCounter == 0)
         {

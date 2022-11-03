@@ -9,11 +9,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Bala extends DynamicObject
 {
     private GreenfootImage balaImg;
-    public int direcao;
-    /**
-     * Act - do whatever the bala wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    private int direcao;
+    
     public Bala(int dir){
         balaImg = new GreenfootImage("brick.png");        
         setImage(balaImg);
@@ -41,12 +38,12 @@ public class Bala extends DynamicObject
         removeBala();
         
     }
-    public void removeBala()
+    private void removeBala()
     {
         if(isTouching(Solid.class) && !isTouching(Cannon.class))
         getWorld().removeObject(this);
     }
-    public void movimentoBala(int direcao)
+    private void movimentoBala(int direcao)
     {
         switch(direcao){
             case 0:

@@ -13,11 +13,7 @@ public class Player extends DynamicObject
     public boolean damageReady= true;
     public int damageCooldown = 0;
     public HPText hpText =  null;
-    
-    public Player(){
-        
-    }
-       
+           
     public void act()
     {        
         super.act();
@@ -25,7 +21,7 @@ public class Player extends DynamicObject
         loseHP(); 
         checkGameLoss();
     }
-    public void movimento(){
+    private void movimento(){
         if(Greenfoot.isKeyDown(left) && isWalkable("left")){
             setLocation(getX()-3,getY());
             
@@ -40,7 +36,7 @@ public class Player extends DynamicObject
             setLocation(getX(),getY()+3);
         }
     }
-    public void checkGameLoss(){
+    private void checkGameLoss(){
         if(hp == 0){
             Greenfoot.setWorld(new GameEnd());
         }
@@ -53,7 +49,7 @@ public class Player extends DynamicObject
             down = downKey;
             hpText = text;            
     }
-    public void loseHP(){
+    private void loseHP(){
         Actor spike = getOneIntersectingObject(Spike.class);
         Actor bala = getOneIntersectingObject(Bala.class);
         
@@ -72,5 +68,4 @@ public class Player extends DynamicObject
             damageCooldown = 120;
         }        
     }
-
 }

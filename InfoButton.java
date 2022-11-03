@@ -19,7 +19,6 @@ public class InfoButton extends Botao
 
     public void clicked()
     {
-        super.clicked();
         Greenfoot.setWorld(new MenuInfo());
     }
 }

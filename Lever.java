@@ -9,10 +9,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Lever extends Interactable
 {
     private GreenfootImage LeverImg;
-    public int direction = 0;
+    private int direction = 0;
     public Door target[] = new Door[10];
-    public boolean triggered = false;
-    public boolean newTouch = true;
+    private boolean triggered = false;
+    private boolean newTouch = true;
     
     public Lever()
     {
@@ -42,7 +42,7 @@ public class Lever extends Interactable
                 break;
         }
     }
-    public void trigger(){
+    private void trigger(){
         if(isPlayerTouching() && newTouch && triggered){
             int i = 0;
             for(i=0;i<target.length;i++){

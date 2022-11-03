@@ -18,9 +18,4 @@ public class Spike extends Interactable
         spikeImg = new GreenfootImage("Spike.png");        
         setImage(spikeImg);
     }
-    public void act()
-    {
-        // Add your action code here.
-    }
-
 }

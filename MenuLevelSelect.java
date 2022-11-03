@@ -71,8 +71,7 @@ public class MenuLevelSelect extends Menu
             }
             if(button2.selected){
                 Greenfoot.setWorld(new Level2(selectedTime));
-            }
-            
+            }            
         }
     }
 }

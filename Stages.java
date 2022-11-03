@@ -28,7 +28,7 @@ public class Stages extends World
         addObject(timer, getWidth()/2 , 15);
     }
 
-    public void borderSetup(){
+    private void borderSetup(){
         int i = 0;
         for(i = 0; i<=32; i++){
             addObject(new Wall1(),32*(i+1)-16,16);
@@ -39,7 +39,7 @@ public class Stages extends World
             addObject(new Wall1(),32*32-16,32*(i+1)-16);
         }
     }
-    public void spawnPlayers(){
+    private void spawnPlayers(){
         player1 = new Player();
         hpText1 = new HPText();
         addObject(player1, getWidth()/4,200);

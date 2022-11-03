@@ -13,7 +13,7 @@ public class Interactable extends StaticObject
      * Act - do whatever the Interactable wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    public boolean newPress = true;
+    private boolean newPress = true;
     public void act()
     {
         
