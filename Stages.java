@@ -40,17 +40,17 @@ public class Stages extends World
         }
     }
     private void spawnPlayers(){
-        player1 = new Player();
+        player1 = new Player(1);
         hpText1 = new HPText();
         addObject(player1, getWidth()/4,200);
         addObject(hpText1, 100,getHeight()-15);
-        player1.setup("w","a","d","s", hpText1);
+        player1.setup("w","a","d","s", hpText1,1);
         
-        player2 = new Player();
+        player2 = new Player(2);
         hpText2 = new HPText();
         addObject(player2, getWidth()*3/4 ,200 );
         addObject(hpText2, getWidth()-100,getHeight()-15);
-        player2.setup("up","left","right","down", hpText2);
+        player2.setup("up","left","right","down", hpText2,2);
         
         hpText1.playerNum=1;
         hpText2.playerNum=2;

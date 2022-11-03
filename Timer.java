@@ -29,6 +29,10 @@ public class Timer extends Actor
             timeLeft--;
             updateTimer();          
         } 
+        if (timeLeft == 0)
+        {
+            Greenfoot.setWorld(new GameEnd(0));
+        }
     }
     public void updateTimer(){
         setImage(new GreenfootImage("TIME LEFT: " + timeLeft, 24, Color.RED, null));

@@ -24,7 +24,7 @@ public class Saida extends Interactable
     }
     private void win(){
         if(playersTouching==2){
-            //WIN
+            Greenfoot.setWorld(new GameEnd(1));
         }
     }
 }

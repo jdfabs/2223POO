@@ -15,6 +15,8 @@ public class MenuLevelSelect extends Menu
     public SelectTimeButton button3;
     public SelectTimeButton button4;
     public SelectTimeButton button5;
+    
+    
     /**
      * Constructor for objects of class MenuLevelSelect.
      * 
@@ -59,7 +61,8 @@ public class MenuLevelSelect extends Menu
     }
     public void startSelectedLevel(){
         int selectedTime = 300;
-        if((button1.selected || button2.selected)&&(button3.selected || button4.selected || button5.selected)){
+        if((button1.selected || button2.selected)&&(button3.selected || button4.selected || button5.selected))
+        {
             if(button3.selected){
                 selectedTime = 300;
             }
@@ -74,7 +77,8 @@ public class MenuLevelSelect extends Menu
             }
             if(button2.selected){
                 Greenfoot.setWorld(new Level2(selectedTime));
-            }            
+            }
+        }
         }
     }
-}
+

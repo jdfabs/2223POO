@@ -19,11 +19,11 @@ public class Level1 extends Stages
          timer.updateTimer();
          cannonSpeed = 500+time;
          addStage();
-         timer();
+         
     }
     public void act()
     {
-        timer();
+        
     }
     private void addStage()
     {

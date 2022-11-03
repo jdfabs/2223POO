@@ -1,14 +1,16 @@
 #BlueJ class context
 comment0.target=Player
 comment0.text=\r\n\ Write\ a\ description\ of\ class\ Player\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
-comment1.params=
-comment1.target=void\ act()
+comment1.params=charSelect
+comment1.target=Player(int)
 comment2.params=
-comment2.target=void\ movimento()
-comment3.params=
-comment3.target=void\ checkGameLoss()
-comment4.params=upKey\ leftKey\ rightKey\ downKey\ text
-comment4.target=void\ setup(java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ HPText)
-comment5.params=
-comment5.target=void\ loseHP()
-numComments=6
+comment2.target=void\ act()
+comment3.params=character
+comment3.target=void\ movimento(int)
+comment4.params=
+comment4.target=void\ checkGameLoss()
+comment5.params=upKey\ leftKey\ rightKey\ downKey\ text\ character
+comment5.target=void\ setup(java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ HPText,\ int)
+comment6.params=
+comment6.target=void\ loseHP()
+numComments=7

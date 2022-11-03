@@ -8,15 +8,22 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class GameEnd extends Menu
 {
-
+    
     /**
      * Constructor for objects of class GameEnd.
      * 
      */
-    public GameEnd()
+    public GameEnd(int result)
     {
-        showText("ah seu tonte, PERDESTES", 512, 300);
-        showText("Tempo: ", 512, 416);
+        if(result == 1)
+        {
+            showText("BOA TONTE, GANHASTES", 512, 300);
+        }
+        else
+        {
+            showText("ah seu tonte, PERDESTES", 512, 300);
+            showText("Tempo: ", 512, 416);
+        }
         
     }
 }
