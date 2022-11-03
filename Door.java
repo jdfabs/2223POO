@@ -33,7 +33,6 @@ public class Door extends Solid
         {
             case 0:
                 setLocation(closedX,closedY-32*openDistance);  
-                System.out.println(closedY);
                 break;
             case 1:
                 setLocation(closedX+32*openDistance,closedY);

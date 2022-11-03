@@ -17,6 +17,7 @@ public class Bala extends DynamicObject
     public Bala(int dir){
         balaImg = new GreenfootImage("brick.png");        
         setImage(balaImg);
+        getImage().scale(20,20);
         direcao = dir;
         switch(dir){
             case 0:

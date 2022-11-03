@@ -15,7 +15,7 @@ public class Spike extends Interactable
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public Spike(){
-        spikeImg = new GreenfootImage("Spike.jfif");        
+        spikeImg = new GreenfootImage("Spike.png");        
         setImage(spikeImg);
     }
     public void act()
