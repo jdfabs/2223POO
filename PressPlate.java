@@ -14,7 +14,7 @@ public class PressPlate extends Interactable
     
     public PressPlate()
     {
-        PressPlateImg = new GreenfootImage("stone.png"); 
+        PressPlateImg = new GreenfootImage("PressPlate.png"); 
         getImage().scale(90,90);
         setImage(PressPlateImg);
     }

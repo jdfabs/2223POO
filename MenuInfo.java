@@ -15,8 +15,8 @@ public class MenuInfo extends Menu
      */
     public MenuInfo()
     {                    
-        fundo = new GreenfootImage("MenuInfo.jfif");
-        fundo.scale(1000,1000);
+        fundo = new GreenfootImage("MenuInfo.png");
+        fundo.scale(1024,832);
         setBackground(fundo);
         
         MuteButton mute = new MuteButton();

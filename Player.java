@@ -23,6 +23,7 @@ public class Player extends DynamicObject
     private GreenfootImage DuckEsquerda;
     private GreenfootImage DuckCostas;
     
+    private GreenfootSound som;   
     public Player(int charSelect)
     {
     PigFrente = new GreenfootImage("PigFrente.png");
@@ -34,6 +35,8 @@ public class Player extends DynamicObject
     DuckEsquerda = new GreenfootImage("DuckEsquerda.png");
     DuckCostas = new GreenfootImage("DuckCostas.png");
     character = charSelect;
+    
+    som = new GreenfootSound("PlayerHurt.mp3");
     }
     
     public void act()
@@ -116,7 +119,7 @@ public class Player extends DynamicObject
         }        
         if(damageReady && (spike != null || bala != null)){
             hp--;
-            
+            som.play();
             hpText.changeText(hp);
             damageReady = false;
             damageCooldown = 120;

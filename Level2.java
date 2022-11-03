@@ -7,14 +7,19 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @version (a version number or a date)
  */
 public class Level2 extends Stages
-{
+{   
+    
     public int cannonSpeed;
+    private GreenfootImage level2;
     /**
      * Constructor for objects of class Level2.
      * 
      */
     public Level2(int time)
     {
+         level2 = new GreenfootImage("Level2.jpg");
+         level2.scale(1000,1000);
+         setBackground(level2);
          timer.timeLeft = time;
          timer.updateTimer();
          cannonSpeed = 500+time;

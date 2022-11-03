@@ -9,12 +9,16 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Level1 extends Stages
 {
     public int cannonSpeed;
+    private GreenfootImage level1;
     /**
      * Constructor for objects of class Level1.
      * 
      */
     public Level1(int time)
     {
+         level1 = new GreenfootImage("Level1.jpg");
+         level1.scale(1000,1000);
+         setBackground(level1);
          timer.timeLeft = time;
          timer.updateTimer();
          cannonSpeed = 500+time;
