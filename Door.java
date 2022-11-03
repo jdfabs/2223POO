@@ -47,7 +47,7 @@ public class Door extends Solid
     public void setup(int a, int b){
         openDistance = a;        
         openDirection = b;
-        System.out.println(b);
+        
         closedX = getX();
         closedY = getY();
     }

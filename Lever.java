@@ -50,7 +50,7 @@ public class Lever extends Interactable
                     target[i].close();
                 }                
             }
-            System.out.println("Door is now closed");
+            
             triggered = false;
             newTouch = false;
         }
@@ -61,7 +61,7 @@ public class Lever extends Interactable
                     target[i].open();
                 }                
             }
-            System.out.println("Door is now Open");
+            
             triggered = true;
             newTouch = false;
         }

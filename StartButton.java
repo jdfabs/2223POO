@@ -18,7 +18,7 @@ public class StartButton extends Botao
     }
     public void clicked()
     {
-        super.clicked(); 
+        
         Greenfoot.setWorld(new MenuLevelSelect());
     }
 }

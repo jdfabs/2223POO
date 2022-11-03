@@ -50,6 +50,9 @@ public class MenuLevelSelect extends Menu
         button5.otherButton1 = button4;
         button5.otherButton2 = button3;
         
+        ReturnButton volta = new ReturnButton();
+        addObject(volta, getWidth()-50,getHeight()-50);
+        
     }
     public void act(){
         startSelectedLevel();
