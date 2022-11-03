@@ -8,12 +8,26 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Saida extends Interactable
 {
+    public int playersTouching = 0;
     /**
      * Act - do whatever the Saida wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act()
     {
-        // Add your action code here.
+        trigger();
+        win();
+    }
+    public void trigger(){
+        if(isPlayerTouching()){
+            getWorld().removeObject(getOneIntersectingObject(Player.class));
+            playersTouching++;
+        }
+        
+    }
+    public void win(){
+        if(playersTouching==2){
+            //WIN
+        }
     }
 }
