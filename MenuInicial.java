@@ -13,14 +13,18 @@ public class MenuInicial extends Menu
     
     public MenuInicial()
     {    
-        menuInicial = new GreenfootImage("MenuInicial.jpeg");
+        menuInicial = new GreenfootImage("MenuInicial.png");
         menuInicial.scale(1000,1000);
         setBackground(menuInicial);
         
         StartButton play = new StartButton();
-        addObject(play, 534, 300);
+        addObject(play, 200, 500);
         
         InfoButton info = new InfoButton();
-        addObject(info, 534, 400);
+        addObject(info, 200, 600);
+        
+        MuteButton mute1 = new MuteButton();
+        addObject(mute1
+        , getWidth()-950, 50);
     }
 }

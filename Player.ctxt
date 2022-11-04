@@ -13,4 +13,6 @@ comment5.params=upKey\ leftKey\ rightKey\ downKey\ text\ character
 comment5.target=void\ setup(java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ HPText,\ int)
 comment6.params=
 comment6.target=void\ loseHP()
-numComments=7
+comment7.params=vida
+comment7.target=void\ SetHP(int)
+numComments=8

@@ -13,7 +13,7 @@ public class Level1 extends Stages
      * Constructor for objects of class Level1.
      * 
      */
-    public Level1(int time)
+    public Level1(int time, int vidas)
     {
          GreenfootImage background;
          background = new GreenfootImage("Level1.jpg");
@@ -22,14 +22,15 @@ public class Level1 extends Stages
          timer.setTime(time);
          timer.updateTimer();
          cannonSpeed = 500+time;
-         addStage();
+         addStage(vidas);
+         
          
     }
     public void act()
     {
         
     }
-    private void addStage()
+    private void addStage(int vidas)
     {
         //addObject(new Wall1(),16+4*32,32*11);
         
@@ -103,8 +104,11 @@ public class Level1 extends Stages
         
         
         spawnPlayers();
-        player1.setLocation(32*27+16,32*23+16);
-        player2.setLocation(32*15+16,32*23+16);
+        player1.setLocation(32*15+16,32*23+16);
+        player2.setLocation(32*27+16,32*23+16);
+        player1.SetHP(vidas);
+        player2.SetHP(vidas);
+        
         
     }
 

@@ -125,4 +125,8 @@ public class Player extends DynamicObject
             damageCooldown = 120;
         }        
     }
+    public void SetHP(int vida){
+        hp = vida;
+        hpText.changeText(hp);
+    }
 }

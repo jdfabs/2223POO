@@ -13,7 +13,7 @@ public class InfoButton extends Botao
     public InfoButton()
     {
         info = new GreenfootImage("HelpButton.png");
-        info.scale(100,100);
+        info.scale(200,75);
         setImage(info);
     }
 

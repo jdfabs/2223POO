@@ -7,7 +7,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Interactable extends StaticObject
+public class Interactable extends Actor
 {
     /**
      * Act - do whatever the Interactable wants to do. This method is called whenever

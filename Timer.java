@@ -15,7 +15,7 @@ public class Timer extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public Timer(){
-        setImage(new GreenfootImage("TIME LEFT: " + timeLeft, 24, Color.RED, null));
+        setImage(new GreenfootImage("TIME LEFT: " + timeLeft, 24, Color.WHITE, null));
 
     }
     public void act()
@@ -35,7 +35,7 @@ public class Timer extends Actor
         }
     }
     public void updateTimer(){
-        setImage(new GreenfootImage("TIME LEFT: " + timeLeft, 24, Color.RED, null));
+        setImage(new GreenfootImage("TIME LEFT: " + timeLeft, 24, Color.WHITE, null));
     }
     public int returnTimeLeft(){
         return timeLeft;

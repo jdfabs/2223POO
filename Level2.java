@@ -13,7 +13,7 @@ public class Level2 extends Stages
      * Constructor for objects of class Level2.
      * 
      */
-    public Level2(int time)
+    public Level2(int time, int vidas)
     {
         GreenfootImage background; 
         background = new GreenfootImage("Level2.jpg");
@@ -22,9 +22,9 @@ public class Level2 extends Stages
         timer.setTime(time);
         timer.updateTimer();
         cannonSpeed = 500+time;
-        addStage();
+        addStage(vidas);
     }
-    private void addStage()
+    private void addStage(int vidas)
     {
         //addObject(new Wall1(),16+4*32,32*11);
         
@@ -90,9 +90,9 @@ public class Level2 extends Stages
         for( i = 0; i < 3; i++){
             addObject(new Cannon(2, cannonSpeed),16+(17+i)*32 ,32*(14)+16);
         }
-        for( i = 0; i < 2; i++){
-            addObject(new Cannon(0, cannonSpeed),16+(19)*32 ,32*(9)+16);
-        }
+        
+            addObject(new Cannon(0, cannonSpeed),16+(10)*32 ,32*(9)+16);
+        addObject(new Cannon(0, cannonSpeed),16+(19)*32 ,32*(9)+16);
         for( i = 0; i < 2; i++){
             addObject(new Cannon(2, cannonSpeed),16+(23+i)*32 ,32*(5)+16);
         }
@@ -115,7 +115,8 @@ public class Level2 extends Stages
         spawnPlayers();
         player1.setLocation(32*6+16,32*23+16);
         player2.setLocation(32*27+16,32*23+16);
-        
+        player1.SetHP(vidas);
+        player2.SetHP(vidas);
     }
 }
 

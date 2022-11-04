@@ -13,7 +13,7 @@ public class StartButton extends Botao
     public StartButton()
     {
         start = new GreenfootImage("StartButton.png");
-        start.scale(100,100);
+        start.scale(200,75);
         setImage(start);
     }
     public void clicked()

@@ -18,17 +18,17 @@ public class GameEnd extends Menu
         
             Actor text1 = new Text();
             addObject(text1, getWidth()/2,getHeight()/2);
-            text1.setImage(new GreenfootImage("Vish, boa sorte para a próxima", 50, Color.RED, null));
-   
+            text1.setImage(new GreenfootImage("DERROTA", 50, Color.RED, null));
+            addObject(new ReturnButton(), getWidth()-100, getHeight()-100);
         
     }
     public GameEnd(int time)
     {
         addObject(new ReturnButton(),getWidth()-100,getHeight()-100);
-        
+        addObject(new ReturnButton(),getWidth()-300,getHeight()-100);
             Actor text1 = new Text();
             addObject(text1, getWidth()/2,getHeight()/2-100);
-            text1.setImage(new GreenfootImage("Conseguiram passar o nível!", 50, Color.WHITE, null));
+            text1.setImage(new GreenfootImage("Parabéns! Conseguiram escapar", 50, Color.WHITE, null));
             
             Text text2 = new Text();
             addObject(text2, getWidth()/2,getHeight()/2);

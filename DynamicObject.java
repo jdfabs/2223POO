@@ -15,19 +15,19 @@ public class DynamicObject extends Actor
         
         switch(direction){
             case "up":
-                wall = getOneObjectAtOffset(0, -16, Solid.class);
+                wall = getOneObjectAtOffset(0, -14, Solid.class);
                 
                 break;
             case "right":
-                wall = getOneObjectAtOffset(16, 0, Solid.class);
+                wall = getOneObjectAtOffset(14, 0, Solid.class);
                 
                 break;
             case "down":
-                wall = getOneObjectAtOffset(0, 16, Solid.class);
+                wall = getOneObjectAtOffset(0, 14, Solid.class);
                 
                 break;
             case "left":
-                wall = getOneObjectAtOffset(-16, 0, Solid.class);
+                wall = getOneObjectAtOffset(-14, 0, Solid.class);
                 
                 break;
         }      

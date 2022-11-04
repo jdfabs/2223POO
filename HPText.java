@@ -10,13 +10,14 @@ public class HPText extends Actor
 {
     private int playerNum = 0;
     public HPText(){
-        setImage(new GreenfootImage("Player "+playerNum+" HP: 3", 24, Color.RED, null));
+        setImage(new GreenfootImage("Player "+playerNum+" HP: 3", 24, Color.WHITE, null));
 
     }
     public void changeText(int currentHP){
-        setImage(new GreenfootImage("Player "+playerNum+" HP: " + currentHP, 24, Color.RED, null));
+        setImage(new GreenfootImage("Player "+playerNum+" HP: " + currentHP, 24, Color.WHITE, null));
     }
     public void setPlayerNum(int num){
         playerNum = num;
+        
     }
 }

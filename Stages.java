@@ -43,7 +43,7 @@ public class Stages extends World
         hpText1 = new HPText();
         addObject(player1, getWidth()/4,200);
         addObject(hpText1, 100,getHeight()-15);
-        player1.setup("w","a","d","s", hpText1,1);
+        player1.setup("e","s","f","d", hpText1,1);
         
         player2 = new Player(2);
         hpText2 = new HPText();
@@ -200,17 +200,17 @@ public class Stages extends World
             door = new Door();
             switch(doorDirection){
                 case 0:
-                    addObject(door,16+doorStartX*32,32*(doorStartY-i) +16);                    
+                    addObject(door,16+doorStartX*32,32*(doorStartY-i) +17);                    
                     break;
                 case 1:
-                    addObject(door,16+(doorStartX+i)*32,32*doorStartY +16);       
+                    addObject(door,15+(doorStartX+i)*32,32*doorStartY +16);       
                     door.setRotation(90);
                     break;
                 case 2:
-                    addObject(door,16+doorStartX*32,32*(doorStartY+i) +16);
+                    addObject(door,16+doorStartX*32,32*(doorStartY+i) +15);
                     break;
                 case 3:
-                    addObject(door,16+(doorStartX-i)*32,32*doorStartY +16);
+                    addObject(door,17+(doorStartX-i)*32,32*doorStartY +16);
                     door.setRotation(90);                    
                     break;
                 
