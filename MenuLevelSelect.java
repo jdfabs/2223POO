@@ -10,11 +10,11 @@ public class MenuLevelSelect extends Menu
 {
     private GreenfootImage menuInicial;
     private GreenfootSound som;
-    public SelectLevelButton button1;
-    public SelectLevelButton button2;
-    public SelectTimeButton button3;
-    public SelectTimeButton button4;
-    public SelectTimeButton button5;
+    private SelectLevelButton button1;
+    private SelectLevelButton button2;
+    private SelectTimeButton button3;
+    private SelectTimeButton button4;
+    private SelectTimeButton button5;
     
     
     /**
@@ -35,8 +35,8 @@ public class MenuLevelSelect extends Menu
         button2 = new SelectLevelButton("Level2");
         addObject(button1, getWidth()/3,getHeight()/3);
         addObject(button2, getWidth()/3,getHeight()*2/3);
-        button1.otherButton = button2;
-        button2.otherButton = button1;
+        button1.setReference(button2);
+        button2.setReference(button1);
         
         button3 = new SelectTimeButton("Easy");
         button4 = new SelectTimeButton("Normal");
@@ -45,12 +45,9 @@ public class MenuLevelSelect extends Menu
         addObject(button3, getWidth()*2/3,getHeight()/4);
         addObject(button4, getWidth()*2/3,getHeight()*2/4);
         addObject(button5, getWidth()*2/3,getHeight()*3/4);
-        button3.otherButton1 = button4;
-        button3.otherButton2 = button5;
-        button4.otherButton1 = button3;
-        button4.otherButton2 = button5;
-        button5.otherButton1 = button4;
-        button5.otherButton2 = button3;
+        button3.setReference(button4,button5);
+        button4.setReference(button3,button5);
+        button5.setReference(button4,button3);
         
         ReturnButton volta = new ReturnButton();
         addObject(volta, getWidth()-50,getHeight()-50);
@@ -61,21 +58,21 @@ public class MenuLevelSelect extends Menu
     }
     public void startSelectedLevel(){
         int selectedTime = 300;
-        if((button1.selected || button2.selected)&&(button3.selected || button4.selected || button5.selected))
+        if((button1.returnSelected() || button2.returnSelected())&&(button3.returnSelected() || button4.returnSelected() || button5.returnSelected()))
         {
-            if(button3.selected){
+            if(button3.returnSelected()){
                 selectedTime = 300;
             }
-            if(button4.selected){
+            if(button4.returnSelected()){
                 selectedTime = 200;
             }
-            if(button5.selected){
+            if(button5.returnSelected()){
                 selectedTime = 100;
             }
-            if(button1.selected){
+            if(button1.returnSelected()){
                 Greenfoot.setWorld(new Level1(selectedTime));
             }
-            if(button2.selected){
+            if(button2.returnSelected()){
                 Greenfoot.setWorld(new Level2(selectedTime));
             }
         }

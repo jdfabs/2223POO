@@ -8,15 +8,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MenuInicial extends Menu
 {
-    private GreenfootImage menuInicial;
-    
+    private GreenfootImage menuInicial;    
     private boolean musicaOn = false;
     
     public MenuInicial()
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        //super(1000, 900, 1);
-        
         menuInicial = new GreenfootImage("MenuInicial.jpeg");
         menuInicial.scale(1000,1000);
         setBackground(menuInicial);
@@ -26,12 +22,5 @@ public class MenuInicial extends Menu
         
         InfoButton info = new InfoButton();
         addObject(info, 534, 400);
-        
-        MuteButton mute = new MuteButton();
-        addObject(mute, getWidth()-950, 50);
-        
-       
     }
-
-
 }

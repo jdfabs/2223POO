@@ -13,12 +13,12 @@ public class SelectLevelButton extends Botao
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     private GreenfootImage levelOff;
-    private GreenfootImage levelOn;
+    private GreenfootImage levelOn;    
+    private SelectLevelButton otherButton;    
+    private boolean selected = false;
     
-    public SelectLevelButton otherButton;
-    
-    public boolean selected = false;
-    public SelectLevelButton(String levelName){
+    public SelectLevelButton(String levelName)
+    {
         switch(levelName){
             case "Level1":
                 levelOff = new GreenfootImage("Level1.png");
@@ -50,5 +50,11 @@ public class SelectLevelButton extends Botao
             setImage(levelOff);
         }
         
+    }
+    public boolean returnSelected(){
+        return selected;
+    }
+    public void setReference(SelectLevelButton button){
+        otherButton = button;
     }
 }

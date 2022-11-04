@@ -12,8 +12,7 @@ public class Door extends Solid
     private int openDirection = 0;
     private int openDistance = 0;
     private int closedX;
-    private int closedY;
-    
+    private int closedY;    
     private GreenfootSound som;   
     
     /**

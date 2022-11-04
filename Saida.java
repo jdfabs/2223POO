@@ -9,6 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Saida extends Interactable
 {
     private int playersTouching = 0;
+    private Timer timer;
 
     public void act()
     {
@@ -24,7 +25,11 @@ public class Saida extends Interactable
     }
     private void win(){
         if(playersTouching==2){
-            Greenfoot.setWorld(new GameEnd(1));
+            Greenfoot.setWorld(new GameEnd(timer.returnTimeLeft()));
+            
         }
+    }
+    public void setTimerRef(Timer timerRef){
+        timer = timerRef;
     }
 }

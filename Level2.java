@@ -8,28 +8,26 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Level2 extends Stages
 {   
-    
     public int cannonSpeed;
-    private GreenfootImage level2;
     /**
      * Constructor for objects of class Level2.
      * 
      */
     public Level2(int time)
     {
-         level2 = new GreenfootImage("Level2.jpg");
-         level2.scale(1000,1000);
-         setBackground(level2);
-         timer.timeLeft = time;
-         timer.updateTimer();
-         cannonSpeed = 500+time;
-         addStage();
+        GreenfootImage background; 
+        background = new GreenfootImage("Level2.jpg");
+        background.scale(1000,1000);
+        setBackground(background);
+        timer.setTime(time);
+        timer.updateTimer();
+        cannonSpeed = 500+time;
+        addStage();
     }
     private void addStage()
     {
         //addObject(new Wall1(),16+4*32,32*11);
-        player1.setLocation(32*6+16,32*23+16);
-        player2.setLocation(32*27+16,32*23+16);
+        
         
         int i = 0;
         
@@ -46,6 +44,8 @@ public class Level2 extends Stages
         spawnRow("Wall1",12, 12,2, 2);
         spawnRow("Wall1",10, 13,1, 3);
         spawnRow("Wall1",17, 13,1, 3);
+        
+        spawnRow("Wall1",10, 13,1, 3);
         
         
         spawnRow("Spike",3, 17,1, 6);
@@ -85,10 +85,10 @@ public class Level2 extends Stages
             addObject(new Cannon(0, cannonSpeed),16+(10+i)*32 ,32*(25)+16);
         }
         for( i = 0; i < 3; i++){
-            addObject(new Cannon(2, cannonSpeed),16+(10+i)*32 ,32*(13)+16);
+            addObject(new Cannon(2, cannonSpeed),16+(10+i)*32 ,32*(14)+16);
         }
         for( i = 0; i < 3; i++){
-            addObject(new Cannon(2, cannonSpeed),16+(17+i)*32 ,32*(13)+16);
+            addObject(new Cannon(2, cannonSpeed),16+(17+i)*32 ,32*(14)+16);
         }
         for( i = 0; i < 2; i++){
             addObject(new Cannon(0, cannonSpeed),16+(19)*32 ,32*(9)+16);
@@ -109,13 +109,12 @@ public class Level2 extends Stages
             addObject(new Cannon(2, cannonSpeed),16+(28+i)*32 ,32*0+16);
         }
         
-        //spawnDoorPressPlate(5, 5, 5, 5, 5, 11, 2, 2);    //2press:1Door
-                  //1press:1Door
-        
-        
-        
-        addObject(new Saida(),16+15*32 ,32*(23)+16 );
-        
+        Saida saida = new Saida();
+        addObject(saida,16+15*32 ,32*(23)+16 );
+        saida.setTimerRef(timer);
+        spawnPlayers();
+        player1.setLocation(32*6+16,32*23+16);
+        player2.setLocation(32*27+16,32*23+16);
         
     }
 }

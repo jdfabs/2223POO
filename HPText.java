@@ -8,12 +8,15 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class HPText extends Actor
 {
-    public int playerNum = 0;
+    private int playerNum = 0;
     public HPText(){
         setImage(new GreenfootImage("Player "+playerNum+" HP: 3", 24, Color.RED, null));
 
     }
     public void changeText(int currentHP){
         setImage(new GreenfootImage("Player "+playerNum+" HP: " + currentHP, 24, Color.RED, null));
+    }
+    public void setPlayerNum(int num){
+        playerNum = num;
     }
 }

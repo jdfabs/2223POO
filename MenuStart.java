@@ -9,7 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class MenuStart extends Menu
 {
     private GreenfootImage menuInicial;
-    private GreenfootSound som;    
+    private GreenfootSound som;
     private boolean musicaOn = false;
     
     public MenuStart()
@@ -27,7 +27,7 @@ public class MenuStart extends Menu
         som = new GreenfootSound("Som.mp3");
         
             som.playLoop();
-            som.setVolume(10);    
+            som.setVolume(25);    
         Actor text = new Text();
         addObject(text,getWidth()/2,getHeight()/2);
         text.setImage(new GreenfootImage("Press ENTER to Start", 50, Color.WHITE, null));
@@ -43,4 +43,5 @@ public class MenuStart extends Menu
     {
         return som;
     }
+    
 }

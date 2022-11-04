@@ -8,11 +8,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Player extends DynamicObject
 {
-    public String  up = "w", down = "s", left = "a", right = "d" ;
-    public int hp = 3;
-    public boolean damageReady= true;
-    public int damageCooldown = 0;
-    public HPText hpText =  null;
+    private String  up = "w", down = "s", left = "a", right = "d" ;
+    private int hp = 3;
+    private boolean damageReady= true;
+    private int damageCooldown = 0;
+    private HPText hpText =  null;
     private int character;
     private GreenfootImage PigFrente;
     private GreenfootImage PigDireita;
@@ -21,22 +21,22 @@ public class Player extends DynamicObject
     private GreenfootImage DuckFrente;
     private GreenfootImage DuckDireita;
     private GreenfootImage DuckEsquerda;
-    private GreenfootImage DuckCostas;
-    
+    private GreenfootImage DuckCostas;    
     private GreenfootSound som;   
+    
     public Player(int charSelect)
     {
-    PigFrente = new GreenfootImage("PigFrente.png");
-    PigDireita = new GreenfootImage("PigDireita.png");
-    PigEsquerda = new GreenfootImage("PigEsquerda.png");
-    PigCostas = new GreenfootImage("PigCostas.png");
-    DuckFrente = new GreenfootImage("DuckFrente.png");
-    DuckDireita = new GreenfootImage("DuckDireita.png");
-    DuckEsquerda = new GreenfootImage("DuckEsquerda.png");
-    DuckCostas = new GreenfootImage("DuckCostas.png");
-    character = charSelect;
+        PigFrente = new GreenfootImage("PigFrente.png");
+        PigDireita = new GreenfootImage("PigDireita.png");
+        PigEsquerda = new GreenfootImage("PigEsquerda.png");
+        PigCostas = new GreenfootImage("PigCostas.png");
+        DuckFrente = new GreenfootImage("DuckFrente.png");
+        DuckDireita = new GreenfootImage("DuckDireita.png");
+        DuckEsquerda = new GreenfootImage("DuckEsquerda.png");
+        DuckCostas = new GreenfootImage("DuckCostas.png");
+        character = charSelect;
     
-    som = new GreenfootSound("PlayerHurt.mp3");
+        som = new GreenfootSound("PlayerHurt.mp3");
     }
     
     public void act()
@@ -94,7 +94,7 @@ public class Player extends DynamicObject
     }
     private void checkGameLoss(){
         if(hp == 0){
-            Greenfoot.setWorld(new GameEnd(0));
+            Greenfoot.setWorld(new GameEnd());
         }
     }
 

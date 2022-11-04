@@ -14,16 +14,15 @@ public class Stages extends World
     public Player player2;
     public HPText hpText1;
     public HPText hpText2;
-    public Timer timer;
-
-    /**
-     * Constructor for objects of class Stages
-     */
+    public Timer timer;    
+    
+    
+    
     public Stages()
     {
         super(1024,832,1);
         borderSetup();
-        spawnPlayers();
+        
         timer = new Timer();
         addObject(timer, getWidth()/2 , 15);
     }
@@ -39,7 +38,7 @@ public class Stages extends World
             addObject(new Wall1(),32*32-16,32*(i+1)-16);
         }
     }
-    private void spawnPlayers(){
+    public void spawnPlayers(){
         player1 = new Player(1);
         hpText1 = new HPText();
         addObject(player1, getWidth()/4,200);
@@ -52,8 +51,8 @@ public class Stages extends World
         addObject(hpText2, getWidth()-100,getHeight()-15);
         player2.setup("up","left","right","down", hpText2,2);
         
-        hpText1.playerNum=1;
-        hpText2.playerNum=2;
+        hpText1.setPlayerNum(1);
+        hpText2.setPlayerNum(2);
         hpText1.changeText(3);
         hpText2.changeText(3);
     }

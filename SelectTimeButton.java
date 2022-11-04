@@ -10,9 +10,9 @@ public class SelectTimeButton extends Botao
 {
     private GreenfootImage timeOff;
     private GreenfootImage timeOn;
-    public SelectTimeButton otherButton1;
-    public SelectTimeButton otherButton2;
-    public boolean selected = false;
+    private SelectTimeButton otherButton1;
+    private SelectTimeButton otherButton2;
+    private boolean selected = false;
     /**
      * Act - do whatever the SelectTimeButton wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -56,5 +56,12 @@ public class SelectTimeButton extends Botao
             setImage(timeOff);
         }
         
+    }
+    public boolean returnSelected(){
+        return selected;
+    }
+    public void setReference(SelectTimeButton button1,SelectTimeButton button2){
+        otherButton1 = button1;
+        otherButton2 = button2;
     }
 }

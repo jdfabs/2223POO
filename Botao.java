@@ -9,7 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Botao extends Actor
 {   
     public String keyBind = null;    
-    public int keyBindTimer = 0;
+    private int keyBindTimer = 0;
     /**
      * Act - do whatever the Botao wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -34,7 +34,6 @@ public class Botao extends Actor
     {
         if(Greenfoot.isKeyDown(keyBind) && keyBindTimer == 0 )
         {
-            
             clicked();
             keyBindTimer = 30;
         }

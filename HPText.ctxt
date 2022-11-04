@@ -5,4 +5,6 @@ comment1.params=
 comment1.target=HPText()
 comment2.params=currentHP
 comment2.target=void\ changeText(int)
-numComments=3
+comment3.params=num
+comment3.target=void\ setPlayerNum(int)
+numComments=4

@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Timer extends Actor
 {
-    public int timeLeft = 300;
+    private int timeLeft = 300;
     private int timeCounter;
     /**
      * Act - do whatever the Timer wants to do. This method is called whenever
@@ -31,10 +31,17 @@ public class Timer extends Actor
         } 
         if (timeLeft == 0)
         {
-            Greenfoot.setWorld(new GameEnd(0));
+            Greenfoot.setWorld(new GameEnd());
         }
     }
     public void updateTimer(){
         setImage(new GreenfootImage("TIME LEFT: " + timeLeft, 24, Color.RED, null));
     }
+    public int returnTimeLeft(){
+        return timeLeft;
+    }
+    public void setTime(int time){
+        timeLeft = time;
+    }
+
 }

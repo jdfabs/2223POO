@@ -7,4 +7,6 @@ comment2.params=
 comment2.target=void\ trigger()
 comment3.params=
 comment3.target=void\ win()
-numComments=4
+comment4.params=timerRef
+comment4.target=void\ setTimerRef(Timer)
+numComments=5

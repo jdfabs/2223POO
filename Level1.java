@@ -9,17 +9,17 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Level1 extends Stages
 {
     public int cannonSpeed;
-    private GreenfootImage level1;
     /**
      * Constructor for objects of class Level1.
      * 
      */
     public Level1(int time)
     {
-         level1 = new GreenfootImage("Level1.jpg");
-         level1.scale(1000,1000);
-         setBackground(level1);
-         timer.timeLeft = time;
+         GreenfootImage background;
+         background = new GreenfootImage("Level1.jpg");
+         background.scale(1000,1000);
+         setBackground(background);
+         timer.setTime(time);
          timer.updateTimer();
          cannonSpeed = 500+time;
          addStage();
@@ -32,8 +32,7 @@ public class Level1 extends Stages
     private void addStage()
     {
         //addObject(new Wall1(),16+4*32,32*11);
-        player1.setLocation(32*27+16,32*23+16);
-        player2.setLocation(32*15+16,32*23+16);
+        
         
         int i = 0;
         
@@ -98,8 +97,14 @@ public class Level1 extends Stages
         
         spawnRow("Spike",13, 3,1, 2);
         
-        addObject(new Saida(),16+2*32 ,32*(2)+16 );
+        Saida saida = new Saida();
+        addObject(saida,16+2*32 ,32*(2)+16 );
+        saida.setTimerRef(timer);
         
+        
+        spawnPlayers();
+        player1.setLocation(32*27+16,32*23+16);
+        player2.setLocation(32*15+16,32*23+16);
         
     }
 
